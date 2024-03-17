@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+    <title>signup</title>
+</head>
+<body>
+    <form class="form-control mt-10" method='POST'>
+        <div class="form-control">
+        {% csrf_token %}
+        <div class="mt-5 ml-15">
+        <label class="ml-0.5 text-xl font-sans">Username</label>
+        <input class="input input-accent" name="username" type="text" id="username" {{ form.username.value }}>
+    </div>
+    <div class="mt-5">
+        <label class="ml-0.5 text-xl font-sans">Email</label>
+        <input class="input input-accent" name="email" type="email" id="email" class="" {{form.email.value}}>
+    </div>
+    <div class="mt-5">
+        <label class="ml-0.5 text-xl font-sans">Password</label>
+        <input class="input input-accent" name="password" type="password" id="password" class="" {{form.password.value}}>
+    </div>
+    <div class="mt-5">
+    <label class="ml-0.5 text-xl font-sans">Confirm-password</label>
+    <input class="input input-accent" type="password" name="confirm-password" type="text" id="confirm-password" class="" {{form.password2.value}}>
+</div>
+<div class="mt-5">
+        <button class="ml-0.5 btn btn-accent" type='submit'>register</button>
+    </div>
+</div>
+<p class="mt-10 ml-0.5">do you have any account? <a class="link color: rgb(254 226 226);" href="{% url 'login' %}">login</a></p>
+    </form>
+
+</body>
+</html>

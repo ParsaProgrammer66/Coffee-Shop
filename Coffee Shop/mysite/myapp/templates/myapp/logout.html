@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+    <title>logout</title>
+</head>
+<body>
+    <form method='POST'>
+        {% csrf_token %}
+        <h1 class="text-center justify-center mt-20 text-2xl font-sans">You have been logged out</h1>
+        <a class="btn btn-accent px-31 justify-center" href="{% url 'index' %}">index</a>
+    </form>
+</body>
+</html>

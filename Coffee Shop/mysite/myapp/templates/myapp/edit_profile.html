@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+    <title>edit</title>
+</head>
+<body>
+    <form method='POST'>
+        {% csrf_token %}
+        <div class="mt-20">
+        <label class="ml-0.5 text-xl font-sans">Username</label>
+        <input class="input ml-3 input-accent" name="username" id="username" {{user_form.username.value}}>
+    </div>
+    <div class="mt-10 ml-0.5">
+        <label class="ml-0.5 text-xl font-sans ">email</label>
+        <input class=" ml-3 input input-accent" name="email" type="email" id="email" {{user_form.email.value}}>
+    </div>
+        <button class="ml-0.5 btn mt-10 btn-accent">edit</button>
+    </form>
+</body>
+</html>
